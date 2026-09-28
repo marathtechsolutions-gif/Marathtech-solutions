@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://marathtechsolutions-gif.github.io/Marathtech-solutions/sitemap.xml
