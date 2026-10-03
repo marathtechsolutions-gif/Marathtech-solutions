@@ -2138,8 +2138,58 @@ ul {
 
 .project-overlay {
     position: absolute;
-    inset: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    padding: 20px;
+
     z-index: 2;
+
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.75),
+        transparent
+    );
+}
+
+.project-view {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 22px;
+
+    background: #d4af37;
+    color: #050505;
+
+    border: 1px solid #d4af37;
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.project-view:hover {
+    transform: translateY(-4px);
+    background: #050505;
+    color: #d4af37;
+
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25);
 }
 
 .project-placeholder {
@@ -2323,4 +2373,32 @@ ul {
         height: 24px;
     }
 
+}
+/* ================= PROJECT BUTTON - ALWAYS VISIBLE ================= */
+
+.project-overlay {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: none !important;
+}
+
+.project-view {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .project-overlay {
+        opacity: 1 !important;
+        visibility: visible !important;
+        bottom: 0 !important;
+    }
+
+    .project-view {
+        display: inline-flex !important;
+    }
 }
